@@ -3,6 +3,9 @@
   grid-template-columns: repeat(4, 40px);
   grid-template-rows: repeat(6, 40px);
   grid-gap: 4px;
+
+  /*Decidí no usar plantilla de areas, ya que solamente requeria posicionar 3 elementos*/
+
   /* grid-template-areas:
   "result result result result"
   "borrar limpiar dividir multiplicar"
