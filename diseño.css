@@ -2,6 +2,28 @@
   display: grid;
   grid-template-columns: repeat(4, 40px);
   grid-template-rows: repeat(6, 40px);
-  grid-gap: 5px;
+  grid-gap: 4px;
+  /* grid-template-areas:
+  "result result result result"
+  "borrar limpiar dividir multiplicar"
+  "fila2 fila2 fila2 fila2"
+  "fila3 fila3 fila3 fila3"
+  "fila4 fila4 fila4 ."
+  "fila5 fila5 fila5 ."; */
+}
 
+/* #resultado{
+  grid-area: result;
+} */
+
+#resultado{
+  grid-area: 1/1/2/5;
+}
+
+.item17{
+  grid-area: 6/1/7/3;
+}
+
+.item16{
+  grid-area: 5/4/7/5;
 }
