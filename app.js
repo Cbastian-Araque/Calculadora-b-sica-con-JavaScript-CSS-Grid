@@ -3,9 +3,7 @@ const teclaNumero = document.getElementsByName('numero');
 const teclaSigno = document.getElementsByName('signo');
 
 const teclaIgual = document.getElementsByName('igual')[0];
-const teclaBorrar = document.getElementsByName('borrar')[0];
 const teclaLimpiar = document.getElementsByName('limpiar')[0];
-const teclaDecimal = document.getElementsByName('decimal')[0];
 
 let result = document.getElementById('resultado');
 
