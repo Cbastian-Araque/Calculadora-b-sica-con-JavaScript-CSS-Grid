@@ -33,7 +33,7 @@ teclaSigno.forEach(function(tecla){
 });
 
 teclaIgual.addEventListener('click', function(){
-  calcular();
+  calcular(); //llama a la función calcular
   mostrarPantalla();
 });
 
@@ -42,11 +42,43 @@ teclaLimpiar.addEventListener('click', function(){
   mostrarPantalla();
 });
 
-// teclaDecimal.addEventListener('click' function(){
-//   capturarTecla(tecla.innerText);
-//   alert(tecla.innerText);
-// })
+function selectOperacion(op){
+  if(opeActual === '') return;
+  if(OpeAnterior !== ''){
+    calcular(); //se llama a la función calcular, dando la posibilidad de seguir operando con valores anteriores
+  }
+  else{
+    operacion = op.toString();
+    OpeAnterior = opeActual;
+    opeActual = '';
+  }
+}
 
+function calcular(){
+  let calculo;
+  const anterior = parseFloat(OpeAnterior); //se convierte el valor tipo String, directamente a Number
+  const actual = parseFloat(opeActual);
+  if(isNaN(anterior) || isNaN(actual)) return;
+  switch (operacion) {
+      case '+':
+        calculo = anterior + actual;
+        break;
+      case '-':
+        calculo = anterior - actual;
+        break;
+      case '*':
+        calculo = anterior * actual;
+        break;
+      case '/':
+        calculo = anterior / actual;
+        break;
+    default:
+        return;
+  }
+  opeActual = calculo;
+  operacion = undefined;
+  OpeAnterior = '';
+}
 
 function capturarNumero(num){//se define la funcion de la línea 22
   opeActual = opeActual.toString() + num.toString(); //se convierten los numeros en pantalla a formato texto y se concatena con mas tipos de texto
@@ -62,3 +94,5 @@ function clear(){
 function mostrarPantalla(){
   result.value = opeActual;
 }
+
+clear();
