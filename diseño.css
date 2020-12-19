@@ -1,8 +1,18 @@
+body{
+  background: linear-gradient(75deg, rgb(73, 61, 213), white);
+}
+
 #contenedor-grid{
+  background: rgba(227, 218, 219, 0.51);
+  padding: 5px 0 3px 0;
+  width: 280px;
+  filter: drop-shadow(3px 2px 5px #fff);
   display: grid;
-  grid-template-columns: repeat(4, 40px);
-  grid-template-rows: repeat(6, 40px);
+  grid-template-columns: repeat(4, 60px);
+  grid-template-rows: repeat(6, 60px);
   grid-gap: 4px;
+  justify-content: center;
+  /* margin: auto; */
 
   /*Decidí no usar plantilla de areas, ya que solamente requeria posicionar 3 elementos*/
 
@@ -15,6 +25,7 @@
   "fila5 fila5 fila5 ."; */
 }
 
+
 /* #resultado{
   grid-area: result;
 } */
@@ -23,10 +34,38 @@
   grid-area: 1/1/2/5;
 }
 
+#resultado::placeholder{
+  font-size: 1.5rem;
+}
+
 .item17{
   grid-area: 6/1/7/3;
 }
 
 .item16{
   grid-area: 5/4/7/5;
+  background: rgb(249, 12, 12);
+}
+
+.item16:hover{
+  background: rgb(255, 40, 3);
+}
+
+/*Diseño a las teclas*/
+button{
+  background: rgb(222, 207, 207);
+  color: #000;
+  border-radius: 4px;
+  font-size: 1rem;
+  /* font-weight: bold; */
+  border: 1px solid #fff;
+  outline: inherit;
+  box-shadow: 1px 1px 1px #000;
+}
+
+button:hover{
+  background: #c5cbc5;
+  border: 1px solid #000;
+  color: #000;
+  font-weight: bold;
 }
