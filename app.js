@@ -7,47 +7,48 @@ const teclaBorrar = document.getElementsByName('borrar')[0];
 const teclaLimpiar = document.getElementsByName('limpiar')[0];
 const teclaDecimal = document.getElementsByName('decimal')[0];
 
-let result = document.getElementById('item16');
+let result = document.getElementById('resultado');
 
 //Sera la operación actual de la calculadora
 let opeActual = '';
 
 //Operación anterior para guardarla y reutilizarla para seguir operando
 let OpeAnterior = '';
-let operacion = '';
+let operacion = undefined;
 
 
-teclaNumero.forEach(function(boton){
-  boton.addEventListener('click', function(){
-    capturarNumero(boton.innerText);
+teclaNumero.forEach(function(tecla){
+  tecla.addEventListener('click', function(){
+    capturarNumero(tecla.innerText);
 
-    // alert(boton.innerText); //Se usa alert, para saber si se capturan lo valores de cada tecla de numeros
+    // alert(tecla.innerText); //Se usa alert, para saber si se capturan lo valores de cada tecla de numeros
   })
 });
 
-teclaSigno.forEach(function(boton){
-  boton.addEventListener('click', function(){
-    selectOperacion(boton.innerText);
-    // alert(boton.innerText); //para depurar si funciona el evento click.
+teclaSigno.forEach(function(tecla){
+  tecla.addEventListener('click', function(){
+    selectOperacion(tecla.innerText);
+    // alert(tecla.innerText); //para depurar si funciona el evento click.
   })
 });
 
-teclaIgual.addEventListener(function(boton){
+teclaIgual.addEventListener('click', function(){
   calcular();
   mostrarPantalla();
 });
 
-teclaLimpiar.addEventListener('click',function(){
+teclaLimpiar.addEventListener('click', function(){
   clear();
   mostrarPantalla();
 });
 
-// teclaDecimal.addEventListener('click' function(boton){
-//   capturarTecla(boton.innerText);
-//   alert(boton.innerText);
+// teclaDecimal.addEventListener('click' function(){
+//   capturarTecla(tecla.innerText);
+//   alert(tecla.innerText);
 // })
 
-function agregarNumero(num){
+
+function capturarNumero(num){//se define la funcion de la línea 22
   opeActual = opeActual.toString() + num.toString(); //se convierten los numeros en pantalla a formato texto y se concatena con mas tipos de texto
   mostrarPantalla();
 }
